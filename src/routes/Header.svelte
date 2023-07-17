@@ -3,7 +3,6 @@
     import Logo from "$lib/components/Logo.svelte";
     import { IconType } from "$lib/types";
     import { url } from "$lib/config";
-    const pages:string[] = ["Home", "About", "Skills", "Projects", "Contact"];
 </script>
 
 <nav>
@@ -16,8 +15,8 @@
     <ul class="links">
         <li><a href="/" class="link">Home</a></li>
         <li><a href="/about" class="link">About</a></li>
+        <li><a href="/#Projects" class="link">Projects</a></li>
         <li><a href="/temp" class="link">Skills</a></li>
-        <li><a href="/temp" class="link">Projects</a></li>
         <li><a href="/temp" class="link">Contact</a></li>
     </ul>
 
@@ -35,7 +34,7 @@
         padding-inline: var(--size-3);
         height: var(--size-7);
         line-height: var(--size-7);
-        display: flex;
+        display: inline-block;
     }
 
     .title {

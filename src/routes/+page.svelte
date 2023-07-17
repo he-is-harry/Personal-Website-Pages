@@ -1,6 +1,7 @@
 <script lang="ts">
     // Imports
     import { onMount } from "svelte";
+    import Projects from "./projects.svelte";
 
     let imageHoriPos = "0cqw";
     let imageVertPos = "5cqh";
@@ -137,11 +138,12 @@
             />
         {/each}
 
+        <!-- The width and height of the arrow buttons are --size-3 which is 1rem -->
         <button class="arrow-left" on:click={prev}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="var(--size-3)"
-                height="var(--size-3)"
+                width="1rem"
+                height="1rem"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -156,8 +158,8 @@
         <button class="arrow-right" on:click={next}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="var(--size-3)"
-                height="var(--size-3)"
+                width="1rem"
+                height="1rem"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -276,6 +278,9 @@
         </p>
     </div>
 </div>
+
+<!-- To make this page a bit less cluttered other blocks are in their own file -->
+<Projects />
 
 <style>
     .block-1 {

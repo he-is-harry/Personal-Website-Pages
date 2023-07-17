@@ -1,6 +1,7 @@
 html {
 	/* Font */
 	--font-sans-def: "SF Pro Display", sans-serif;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -10,8 +11,14 @@ html {
 	--highlight-1: #fac548;
 	--highlight-2: #ff961b;
 	--dark-1: #252521;
+	--dark-2: #0d1113;
 	--surface-1: #f1f3f5;
+	--surface-2: #e1e6ea;
+	--surface-3: #b4c0cb;
+	--surface-5: #2a2e35;
+	--brand-surface: #b7fab8;
 
+	--size-2-5: 0.75rem;
 	--font-size-9: 4rem;
 
 	/* --brand: var(--brand-light);
@@ -58,24 +65,29 @@ html {
 	background-attachment: fixed;
 }
 
+/* Remove the default 8px margin all around the page, taking only the top */
+body {
+	margin-top: 8px;
+}
+
 a:link {
 	color: var(--brand);
 	background-color: transparent;
 	text-decoration: none;
-  }
+}
   
-  a:visited {
+a:visited {
 	color: var(--highlight-2);
 	background-color: transparent;
 	text-decoration: none;
-  }
+}
   
-  a:hover {
+a:hover {
 	color: var(--highlight-1);
 	background-color: transparent;
 	text-decoration: underline;
 	cursor: pointer;
-  }
+}
 
 ul,
 ol {
