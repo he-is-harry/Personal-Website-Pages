@@ -12,11 +12,15 @@ html {
 	--highlight-2: #ff961b;
 	--dark-1: #252521;
 	--dark-2: #0d1113;
+	--true-dark: #000000;
+	--true-light: #ffffff;
 	--surface-1: #f1f3f5;
 	--surface-2: #e1e6ea;
 	--surface-3: #b4c0cb;
 	--surface-5: #2a2e35;
 	--brand-surface: #b7fab8;
+	--brand-dark-1: #09aa0e;
+	--brand-dark-2: #08910c;
 
 	--size-2-5: 0.75rem;
 	--font-size-9: 4rem;
@@ -44,6 +48,14 @@ h2 {
 	font-style: normal;
 	font-weight: var(--font-weight-5);
 	font-size: var(--font-size-4);
+}
+
+h5 {
+	font-family: var(--font-sans-def);
+	font-style: normal;
+	font-weight: var(--font-weight-8);
+	font-size: var(--font-size-2);
+	margin: 0;
 }
 
 p {

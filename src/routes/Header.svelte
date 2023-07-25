@@ -17,13 +17,13 @@
         <li><a href="/about" class="link">About</a></li>
         <li><a href="/#Projects" class="link">Projects</a></li>
         <li><a href="/temp" class="link">Skills</a></li>
-        <li><a href="/temp" class="link">Contact</a></li>
+        <li><a href="/contact" class="link">Contact</a></li>
     </ul>
 
     <div class="icons">
         <!-- Use --size-5 which is the same as 1.5rem -->
         <Icon length=1.5rem type={IconType.Github} link="https://github.com/he-is-harry"/>
-        <Icon length=1.5rem type={IconType.Linkedin} link="https://ca.linkedin.com/in/harry-he-661377281"/>
+        <Icon length=1.5rem type={IconType.Linkedin} link="https://ca.linkedin.com/in/harryghe"/>
         <Icon length=1.5rem type={IconType.Website} link={url}/>
     </div>
 </nav>

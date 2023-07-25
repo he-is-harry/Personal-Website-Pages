@@ -82,7 +82,7 @@
     .break-line {
         background-image: linear-gradient(to right, var(--dark-1), var(--surface-2));
         border-radius: 9999px;
-        width: var(--size-11);
+        width: var(--size-12);
         height: var(--size-1);
     }
 

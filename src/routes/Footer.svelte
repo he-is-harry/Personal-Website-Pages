@@ -16,7 +16,7 @@
          | 
         <a href="/temp" class="link">Skills</a>
          | 
-        <a href="/temp" class="link">Contact</a>
+        <a href="/contact" class="link">Contact</a>
     </div>
 
     <p class="quote">Imagine it. Implement it.</p>
@@ -24,9 +24,9 @@
     <div class="icons">
         <!-- Use --size-5 which is the same as 1.5rem -->
         <Icon length=1.5rem type={IconType.Github} link="https://github.com/he-is-harry"/>
-        <Icon length=1.5rem type={IconType.Linkedin} link="https://ca.linkedin.com/in/harry-he-661377281" innerColor="--brand-surface"/>
+        <Icon length=1.5rem type={IconType.Linkedin} link="https://ca.linkedin.com/in/harryghe" innerColor="--brand-surface"/>
         <Icon length=1.5rem type={IconType.Website} link={url}/>
-        <Icon length=1.5rem type={IconType.Email} link="mailto:harryhe_@hotmail.com"/>
+        <Icon length=1.5rem type={IconType.Email} link="mailto:harryhemr@gmail.com"/>
     </div>
     
     <p class="f1-rich-text">© 2023 Harry He. All Rights Reserved.</p>

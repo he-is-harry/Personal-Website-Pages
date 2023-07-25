@@ -2,6 +2,7 @@
     // Imports
     import { onMount } from "svelte";
     import Projects from "./projects.svelte";
+    import Skills from "./skills.svelte";
 
     let imageHoriPos = "0cqw";
     let imageVertPos = "5cqh";
@@ -272,15 +273,16 @@
             programming, and even English. You can find him on <a
                 href="https://github.com/he-is-harry">Github</a
             >,
-            <a href="https://ca.linkedin.com/in/harry-he-661377281">Linkedin</a
+            <a href="https://ca.linkedin.com/in/harryghe">Linkedin</a
             >, and, if you really want to,
-            <a href="mailto:harryhe_@hotmail.com">Email</a>.
+            <a href="mailto:harryhemr@gmail.com">Email</a>.
         </p>
     </div>
 </div>
 
 <!-- To make this page a bit less cluttered other blocks are in their own file -->
 <Projects />
+<Skills />
 
 <style>
     .block-1 {
