@@ -14,7 +14,7 @@
          | 
         <a href="/#Projects" class="link">Projects</a>
          | 
-        <a href="/temp" class="link">Skills</a>
+        <a href="/#Skills" class="link">Skills</a>
          | 
         <a href="/contact" class="link">Contact</a>
     </div>

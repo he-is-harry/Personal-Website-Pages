@@ -80,10 +80,11 @@
     }
 
     .break-line {
-        background-image: linear-gradient(to right, var(--dark-1), var(--surface-2));
+        background-image: linear-gradient(to right, var(--dark-1), var(--surface-3));
         border-radius: 9999px;
         width: var(--size-12);
         height: var(--size-1);
+        margin-bottom: var(--size-6);
     }
 
     .grid-list {

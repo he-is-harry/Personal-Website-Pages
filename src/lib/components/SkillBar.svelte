@@ -350,10 +350,17 @@ c8.9-2.3,18.2,1.2,23.4,8.7c3.2,4.4,4.4,9.9,3.5,15.3c-0.9,5.2-4.1,9.9-8.6,12.7l-2
 <style>
     .skill-bar {
         display: flex;
-        margin: auto;
-        justify-content: center;
         gap: var(--size-5);
-        padding-block: var(--size-9);
+        padding-top: var(--size-8);
+        padding-bottom: var(--size-9);
+        overflow: auto;
+    }
+
+    @media (min-width: 768px) {
+        .skill-bar {
+            justify-content: center;
+            margin: auto;
+        }
     }
 
     /* Tooltips */

@@ -126,6 +126,7 @@
 
 <div class="block-1">
     <!-- Draw in Image Carousel -->
+    <!-- 1024px change to standard 2 in 1 row -->
     <div
         class="image-carousel"
         style="container-type: size; width: {imageWidth}; height: {imageHeight}; left: {imageHoriPos}; top: {imageVertPos};"

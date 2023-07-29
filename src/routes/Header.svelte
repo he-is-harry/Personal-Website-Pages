@@ -16,7 +16,7 @@
         <li><a href="/" class="link">Home</a></li>
         <li><a href="/about" class="link">About</a></li>
         <li><a href="/#Projects" class="link">Projects</a></li>
-        <li><a href="/temp" class="link">Skills</a></li>
+        <li><a href="/#Skills" class="link">Skills</a></li>
         <li><a href="/contact" class="link">Contact</a></li>
     </ul>
 

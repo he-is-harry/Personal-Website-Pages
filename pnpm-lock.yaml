@@ -14,6 +14,9 @@ dependencies:
   postcss-jit-props:
     specifier: ^1.0.13
     version: 1.0.13(postcss@8.4.24)
+  svelte-inview:
+    specifier: ^4.0.1
+    version: 4.0.1(svelte@4.0.1)
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -1607,6 +1610,14 @@ packages:
     dependencies:
       svelte: 4.0.1
     dev: true
+
+  /svelte-inview@4.0.1(svelte@4.0.1):
+    resolution: {integrity: sha512-8NuT/DKFiZAccDw1Z16cIsdZ7K6/BGxrUfDaFaWTCEdn3YqMj1TUAkfmQ08FQ1+INl1G+TQS+ImXIBiiISgXog==}
+    peerDependencies:
+      svelte: ^3.0.0 || ^4.0.0
+    dependencies:
+      svelte: 4.0.1
+    dev: false
 
   /svelte-preprocess@5.0.4(postcss@8.4.24)(svelte@4.0.1)(typescript@5.1.6):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
