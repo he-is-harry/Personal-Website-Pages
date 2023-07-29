@@ -37,6 +37,7 @@
         box-shadow: var(--shadow-5);
         background-color: var(--surface-5);
         border-radius: var(--size-2-5);
+        margin-inline: auto;
 
         transition-property: transform;
         transition-duration: 0.5s;

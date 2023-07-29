@@ -10,7 +10,7 @@
         "\\c harry_info",
         '<br>You are now connected to database "harry_info" as user "harryhe".<br>harry_info=# ',
         "SELECT adjective FROM skills LIMIT 3;",
-        "<br>  adjective<br>-------------<br> Innovative<br> Persevering<br> Effective<br>(3 rows)<br>harry_info=# ",
+        "<br>&nbsp;&nbsp;adjective<br>-------------<br>&nbsp;Innovative<br>&nbsp;Persevering<br>&nbsp;Effective<br>(3 rows)<br>harry_info=# ",
     ];
 
     let isInView: boolean;
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="terminal-bottom" id="terminal-text">
-                <p class="terminal-text">{@html cur_commands}<span id="cursor">|</span></p>
+                <p class="terminal-text">{@html cur_commands}<span id="cursor">&nbsp;</span></p>
             </div>
         </div>
     </div>
@@ -125,6 +125,7 @@
 <style>
     .animation-window {
         max-width: 540px;
+        min-width: 300px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -142,14 +143,20 @@
         top: -40px;
     }
 
-    @media (min-width: 480px) {
+    /* The required width must be larger, so that the terminal is not squished so much */
+    @media (min-width: 640px) {
         .display-window {
             max-width: 90%;
         }
 
         .terminal-window {
             max-width: 90%;
-            left: 10%;
+            left: 5%;
+        }
+    }
+    @media (min-width: 1440px) {
+        .terminal-window {
+            left: 15%;
         }
     }
 
@@ -157,7 +164,7 @@
         width: 100%;
         height: 100%;
         /* Larger box shadow used */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.24);
         position: relative;
         border-radius: 5px;
         background-color: var(--dark-1);
@@ -220,7 +227,7 @@
     .terminal-text {
         color: var(--surface-1);
         font-family: "Courier New", Courier, monospace;
-        font-size: var(--font-size-2);
+        font-size: var(--font-size-2); 
         line-height: var(--size-4);
         padding-inline: var(--size-2);
     }
@@ -230,5 +237,21 @@
         color: var(--dark-1);
         position: relative;
         top: -8px;
+    }
+
+    @media (max-width: 580px) {
+        .terminal-text {
+            font-size: var(--font-size-1);
+        }
+    }
+    @media (max-width: 480px) {
+        .terminal-text {
+            font-size: 0.9rem;
+        }
+    }
+    @media (max-width: 400px) {
+        .terminal-text {
+            font-size: 0.8rem;
+        }
     }
 </style>

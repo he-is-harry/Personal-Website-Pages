@@ -21,7 +21,7 @@
 <section id="Projects">
     <h1>Projects</h1>
     <div class="break-line"></div>
-
+    
     <ul class="grid-list">
         <li class="grid-element">
             <ProjectBlock projectLink="https://github.com/he-is-harry/Personal-Website" imgSrc="/projects/PersonalWebsite.png"

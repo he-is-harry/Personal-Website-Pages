@@ -4,10 +4,10 @@
     import Projects from "./projects.svelte";
     import Skills from "./skills.svelte";
 
-    let imageHoriPos = "0cqw";
-    let imageVertPos = "5cqh";
-    let imageWidth = "50cqw";
-    let imageHeight = "90cqh";
+    let imageHoriPos = "0";
+    let imageVertPos = "5%";
+    let imageWidth = "100%";
+    let imageHeight = "90%";
     let magnification = 1.5;
 
     // Universal Carousel Variables
@@ -126,70 +126,71 @@
 
 <div class="block-1">
     <!-- Draw in Image Carousel -->
-    <!-- 1024px change to standard 2 in 1 row -->
-    <div
-        class="image-carousel"
-        style="container-type: size; width: {imageWidth}; height: {imageHeight}; left: {imageHoriPos}; top: {imageVertPos};"
-    >
-        {#each [carouselPhotos[index]] as src (index)}
-            <img
-                {src}
-                alt="Images of Harry"
-                class="slideshow-image"
-                id="image-{index}"
-            />
-        {/each}
-
-        <!-- The width and height of the arrow buttons are --size-3 which is 1rem -->
-        <button class="arrow-left" on:click={prev}>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1rem"
-                height="1rem"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-move-left"
-                ><path d="M6 8L2 12L6 16" /><path d="M2 12H22" /></svg
-            >
-        </button>
-
-        <button class="arrow-right" on:click={next}>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1rem"
-                height="1rem"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-move-right"
-                ><path d="M18 8L22 12L18 16" /><path d="M2 12H22" /></svg
-            >
-        </button>
-
-        <div class="slideshow-buttons">
-            <!-- Loop each button for the number of states, 3 times -->
-            {#each { length: numStates } as _, i}
-                {#if i == index}
-                    <button
-                        style="opacity: 1"
-                        class="slideshow-button"
-                        on:click={reset_animation}
-                    />
-                {:else}
-                    <button
-                        style="opacity: 0.35"
-                        class="slideshow-button"
-                        on:click={() => jumpTo(i)}
-                    />
-                {/if}
+    <div class="carousel-container">
+        <div
+            class="image-carousel"
+            style="container-type: size; width: {imageWidth}; height: {imageHeight}; left: {imageHoriPos}; top: {imageVertPos};"
+        >
+            {#each [carouselPhotos[index]] as src (index)}
+                <img
+                    {src}
+                    alt="Images of Harry"
+                    class="slideshow-image"
+                    id="image-{index}"
+                />
             {/each}
+
+            <!-- The width and height of the arrow buttons are --size-3 which is 1rem -->
+            <button class="arrow-left" on:click={prev}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1rem"
+                    height="1rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-move-left"
+                    ><path d="M6 8L2 12L6 16" /><path d="M2 12H22" /></svg
+                >
+            </button>
+
+            <button class="arrow-right" on:click={next}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1rem"
+                    height="1rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-move-right"
+                    ><path d="M18 8L22 12L18 16" /><path d="M2 12H22" /></svg
+                >
+            </button>
+
+            <div class="slideshow-buttons">
+                <!-- Loop each button for the number of states, 3 times -->
+                {#each { length: numStates } as _, i}
+                    {#if i == index}
+                        <button
+                            style="opacity: 1"
+                            class="slideshow-button"
+                            on:click={reset_animation}
+                        />
+                    {:else}
+                        <button
+                            style="opacity: 0.35"
+                            class="slideshow-button"
+                            on:click={() => jumpTo(i)}
+                        />
+                    {/if}
+                {/each}
+            </div>
         </div>
     </div>
 
@@ -287,17 +288,28 @@
 
 <style>
     .block-1 {
-        container-type: size;
-        max-width: 100%;
-        height: 30rem;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-auto-columns: max-content;
+        display: grid;
+        /* height: 30rem; */
         margin-inline: var(--size-6);
     }
 
+    /* At 1024px the image carousel will have proper formatting with the 
+    words inline */
+    @media (min-width: 1024px) {
+        .block-1 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
     .text-column {
-        position: absolute;
-        left: 50cqw;
+        /* position: absolute; */
+        /* left: 50cqw;
         top: 50cqh;
-        transform: translateY(-50%);
+        transform: translateY(-50%); */
+        position: relative;
+        align-self: center;
         padding-inline: var(--size-7);
     }
 
@@ -313,8 +325,12 @@
 
     /* Carousel Styling */
     /* Image Carousel */
+    .carousel-container {
+        height: 30rem;
+    }
+
     .image-carousel {
-        position: absolute;
+        position: relative;
         align-items: center;
     }
 
@@ -324,8 +340,8 @@
 
     .slideshow-image {
         animation: 1s fadeIn ease;
-        width: 100cqw;
-        height: 100cqh;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 
