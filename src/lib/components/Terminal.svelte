@@ -1,7 +1,16 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { inview } from "svelte-inview";
+    import { cubicInOut } from "svelte/easing";
+    import { fade } from "svelte/transition";
 
+    // Display Variables
+    let cur_adjectives: number = 0;
+    // 0 - blank, 1 - initial, 2 - final
+    const initial_adjectives: string = "1.<br>2.<br>3.<br>";
+    const final_adjectives: string = "1. Innovative<br>2. Persevering<br>3. Effective<br>"
+
+    // Terminal Variables
     let cur_commands: string = "";
     const commands_src: string[] = [
         "harry@server:~$ ",
@@ -36,12 +45,18 @@
                         console.log(elem.scrollHeight);
                         elem.scrollTop = elem.scrollHeight;
                     }
+
+                    cur_adjectives = 2;
                     
                     clearInterval(intervalID);
                     return ;
                 }
 
                 if ((command_index & 1) == 0) {
+                    if(command_index == 0) { 
+                        // First command enters, the display prompts appear
+                        cur_adjectives = 1;
+                    }
                     cur_commands += commands_src[command_index];
                     command_index++;
                     // After computer prompts, there is a certain delay
@@ -100,7 +115,33 @@
     const { inView } = event.detail;
     isInView = inView;
 }} >
-    <div class="display-window" />
+    <div class="display-window">
+        <div class="inner-display">
+            <div class="display-header">
+                <div class="buttons">
+                    <span class="button-icon red-button" />
+                    <span class="button-icon orange-button" />
+                    <span class="button-icon green-button" />
+                </div>
+                <div class="display-title">
+                    <p class="display-title-text">Who is Harry He?</p>
+                </div>
+            </div>
+            <div class="display-bottom">
+                <img
+                    src="/DisplayImage.png"
+                    alt="Harry Posing"
+                    class="display-image"
+                />
+                {#if cur_adjectives == 1}
+                    <h2 class="display-adjectives" in:fade={{ duration: 1000, easing: cubicInOut }}>{@html initial_adjectives}</h2>
+                {:else if cur_adjectives == 2}
+                    <h2 class="display-adjectives" in:fade={{ duration: 1000, easing: cubicInOut }}>{@html final_adjectives}</h2>
+                {/if}
+            </div>
+        </div>
+    </div>
+
     <div class="terminal-window">
         <div class="inner-terminal">
             <div class="terminal-header">
@@ -120,31 +161,136 @@
     </div>
 </div>
 
-<!-- <p>Hello, this is a line.<br>This is another line in the same paragraph.</p> -->
-
 <style>
     .animation-window {
         max-width: 540px;
         min-width: 300px;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
     }
 
+    /* Button icons are shared between both windows */
+    .buttons {
+        display: block;
+        margin-left: 12px;
+    }
+
+    .button-icon {
+        border-radius: 50%;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 4px;
+    }
+
+    .red-button {
+        background-color: #ff5f56;
+    }
+    .orange-button {
+        background-color: #ffbd2e;
+    }
+    .green-button {
+        background-color: #27c93f;
+    }
+
+    /* Top window */
     .display-window {
         max-width: 100%;
+        height: 300px;
+        position: relative;
     }
 
+    .inner-display {
+        width: 100%;
+        height: 100%;
+        /* Smaller box shadow used */
+        box-shadow: var(--shadow-5);
+        position: relative;
+        border-radius: 5px;
+        background-color: var(--surface-2);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .display-header {
+        width: 100%;
+        /* By default the height of the header is 38 px but
+         can expand to be larger if needed */
+        flex-basis: 38px;
+        display: flex;
+        align-items: center;
+        background-color: var(--surface-1);
+    }
+
+    .display-title {
+        position: absolute;
+        width: 100%;
+        height: 38px;
+        /* The buttons take up 64 px, so add on var(--size-2) */
+        left: calc(64px + var(--size-4));
+        display: flex;
+        align-items: center;
+    }
+    .display-title-text {
+        font-size: var(--font-size-2);
+    }
+
+    .display-bottom {
+        height: 100%;
+        width: 100%;
+        container-type: size;
+        position: relative;
+    }
+
+    .display-image {
+        animation: 1s fadeIn ease;
+        width: auto;
+        height: 100%;
+    }
+
+    .display-adjectives {
+        position: absolute;
+        top: 10cqh;
+        left: 57cqw;
+
+        color: var(--dark-1);
+        font-size: var(--font-size-4); 
+        line-height: 200%;
+        white-space: nowrap;
+    }
+    @media (max-width: 480px) {
+        /* Shift the image more to the left */
+        .display-image {
+            position: absolute;
+            left: -40px;
+        }
+
+        .display-adjectives {
+            top: 10cqh;
+            font-size: var(--font-size-1); 
+        }
+    }
+    @media (min-width: 480px) and (max-width: 640px) {
+        .display-adjectives {
+            top: 20cqh;
+            left: 60cqw;
+            font-size: var(--font-size-2); 
+        }
+    }
+
+    /* Bottom terminal */
     .terminal-window {
         max-width: 100%;
         height: 300px;
         position: relative;
         z-index: 1;
-        top: -40px;
+        top: -20px;
     }
 
     /* The required width must be larger, so that the terminal is not squished so much */
     @media (min-width: 640px) {
+        /* Top window is also handled here */
         .display-window {
             max-width: 90%;
         }
@@ -154,7 +300,7 @@
             left: 5%;
         }
     }
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
         .terminal-window {
             left: 15%;
         }
@@ -182,29 +328,6 @@
         background-color: var(--surface-1);
     }
 
-    .buttons {
-        display: block;
-        margin-left: 12px;
-    }
-
-    .button-icon {
-        border-radius: 50%;
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin-right: 4px;
-    }
-
-    .red-button {
-        background-color: #ff5f56;
-    }
-    .orange-button {
-        background-color: #ffbd2e;
-    }
-    .green-button {
-        background-color: #27c93f;
-    }
-
     .terminal-title {
         position: absolute;
         width: 100%;
@@ -216,6 +339,7 @@
     }
     .terminal-title-text {
         font-size: var(--font-size-2);
+        font-weight: var(--font-weight-5);
     }
 
     .terminal-bottom {
