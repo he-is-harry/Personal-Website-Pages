@@ -3,21 +3,23 @@
     import Logo from "$lib/components/Logo.svelte";
     import { IconType } from "$lib/types";
     import { url } from "$lib/config";
+
+    import { base } from '$app/paths';
 </script>
 
 <nav>
-    <a href="/" class="title">
+    <a href="{base}/" class="title">
         <!-- Use --size-7 which is 2 rem -->
         <Logo length=2rem/>
         <b>Harry He</b>
     </a>
 
     <ul class="links">
-        <li><a href="/" class="link">Home</a></li>
-        <li><a href="/about" class="link">About</a></li>
-        <li><a href="/#Projects" class="link">Projects</a></li>
-        <li><a href="/#Skills" class="link">Skills</a></li>
-        <li><a href="/contact" class="link">Contact</a></li>
+        <li><a href="{base}/" class="link">Home</a></li>
+        <li><a href="{base}/about" class="link">About</a></li>
+        <li><a href="{base}/#Projects" class="link">Projects</a></li>
+        <li><a href="{base}/#Skills" class="link">Skills</a></li>
+        <li><a href="{base}/contact" class="link">Contact</a></li>
     </ul>
 
     <div class="icons">
@@ -73,6 +75,7 @@
 
     b {
         padding-left: var(--size-2);
+        font-weight: var(--font-weight-7);
     }
 
     @media (min-width: 768px) {

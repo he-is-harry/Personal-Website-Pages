@@ -2,21 +2,23 @@
     import Icon from "./Icon.svelte";
     import { IconType } from "$lib/types";
     import { url } from "$lib/config";
+
+    import { base } from '$app/paths';
 </script>
 
 <div class="footer">
     <h2 class="large-name">Harry He</h2>
 
     <div class="mini-menu">
-        <a href="/" class="link">Home</a>
+        <a href="{base}/" class="link">Home</a>
          | 
-        <a href="/about" class="link">About</a>
+        <a href="{base}/about" class="link">About</a>
          | 
-        <a href="/#Projects" class="link">Projects</a>
+        <a href="{base}/#Projects" class="link">Projects</a>
          | 
-        <a href="/#Skills" class="link">Skills</a>
+        <a href="{base}/#Skills" class="link">Skills</a>
          | 
-        <a href="/contact" class="link">Contact</a>
+        <a href="{base}/contact" class="link">Contact</a>
     </div>
 
     <p class="quote">Imagine it. Implement it.</p>

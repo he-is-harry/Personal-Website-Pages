@@ -1,10 +1,14 @@
+<script lang="ts">
+    import { base } from '$app/paths';
+</script>
+
 <div class="content">
     <h1>Thanks for emailing Harry!</h1>
     <h2>Harry will try to reply as soon as he is avaliable.</h2>
     <br />
 
     <p class="notice">Note: Harry does not check this website's email that often, in order to reach out to him more urgently, contact him on <a href="https://ca.linkedin.com/in/harryghe">Linkedin</a>.</p>
-    <img src="/Thanks.gif" alt="Thank you" class="thanks-image"/>
+    <img src="{base}/static/Thanks.gif" alt="Thank you" class="thanks-image"/>
 </div>
 
 <svelte:head>

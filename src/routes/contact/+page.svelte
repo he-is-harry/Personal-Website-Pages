@@ -1,6 +1,8 @@
 <script lang="ts">
     import Logo from "$lib/components/Logo.svelte";
     import { url } from "$lib/config";
+
+    import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -9,7 +11,7 @@
 
 <div class="content">
     <div class="image-transition"></div>
-    <img src="/ContactHeader.png" alt="Serious Harry" class="contact-header"/>
+    <img src="{base}/static/ContactHeader.png" alt="Serious Harry" class="contact-header"/>
     <div class="contact-block">
         <div class="form-title">
             <h1>Contact</h1>
@@ -25,7 +27,7 @@
         
     
         <div class="form">
-            <form action="https://formsubmit.co/d5da8b5555cb998538ede8703c44f0a7" method="POST">
+            <form action="https://formsubmit.co/harryhemr@gmail.com" method="POST">
                 <input type="hidden" name="_subject" value="New website contact">
                 <h5>EMAIL</h5>
                 <input type="email" name="email" placeholder="Your email" required class="email-input">

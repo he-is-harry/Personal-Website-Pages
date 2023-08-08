@@ -4,6 +4,8 @@
     import { cubicInOut } from "svelte/easing";
     import { fade } from "svelte/transition";
 
+    import { base } from '$app/paths';
+
     // Display Variables
     let cur_adjectives: number = 0;
     // 0 - blank, 1 - initial, 2 - final
@@ -129,7 +131,7 @@
             </div>
             <div class="display-bottom">
                 <img
-                    src="/DisplayImage.png"
+                    src="{base}/static/DisplayImage.png"
                     alt="Harry Posing"
                     class="display-image"
                 />
