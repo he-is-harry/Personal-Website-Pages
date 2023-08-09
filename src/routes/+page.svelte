@@ -3,7 +3,6 @@
     import { onMount } from "svelte";
     import Projects from "./projects.svelte";
     import Skills from "./skills.svelte";
-    import { base } from '$app/paths';
 
     let imageHoriPos = "0";
     let imageVertPos = "5%";
@@ -33,9 +32,9 @@
 
     // Image Carousel
     const carouselPhotos = [
-        base + "/static/carousel/HarryPosing.JPG",
-        base + "/static/carousel/HarryTeaching.png",
-        base + "/static/carousel/HarryCoding.JPG",
+        "/carousel/HarryPosing.JPG",
+        "/carousel/HarryTeaching.png",
+        "/carousel/HarryCoding.JPG",
     ];
 
     // Name Carousel
@@ -123,6 +122,8 @@
 
 <svelte:head>
     <title>Harry He</title>
+    <meta name="keywords" content="Harry He">
+    <meta name="author" content="Harry He">
 </svelte:head>
 
 <div class="block-1">

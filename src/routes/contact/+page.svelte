@@ -1,8 +1,6 @@
 <script lang="ts">
     import Logo from "$lib/components/Logo.svelte";
     import { url } from "$lib/config";
-
-    import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -11,7 +9,7 @@
 
 <div class="content">
     <div class="image-transition"></div>
-    <img src="{base}/static/ContactHeader.png" alt="Serious Harry" class="contact-header"/>
+    <img src="/ContactHeader.png" alt="Serious Harry" class="contact-header"/>
     <div class="contact-block">
         <div class="form-title">
             <h1>Contact</h1>

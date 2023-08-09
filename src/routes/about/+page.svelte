@@ -1,7 +1,3 @@
-<script lang="ts">
-    import { base } from '$app/paths';
-</script>
-
 <svelte:head>
     <title>About - Harry He</title>
 </svelte:head>
@@ -39,7 +35,7 @@
         <!-- Render in all of the images in the image band -->
         {#each { length: 4 } as _, i}
             <img
-                src="{base}/static/About{i + 1}.png"
+                src="/About{i + 1}.png"
                 alt="Project Images"
                 class="banded-image"
             />

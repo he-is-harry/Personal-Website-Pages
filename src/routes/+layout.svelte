@@ -2,13 +2,13 @@
     import Header from "./Header.svelte";
     import "../app.css"
     import Footer from "./Footer.svelte";
-
-    import { base } from '$app/paths';
+    
+    // import { base } from "$app/paths";
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
     <link rel="stylesheet" href="{base}/src/fonts.css" />
-</svelte:head>
+</svelte:head> -->
 
 <div class="layout">
     <Header />

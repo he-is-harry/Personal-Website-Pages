@@ -1,7 +1,6 @@
 <script lang="ts">
     import ProjectBlock from "$lib/components/ProjectBlock.svelte";
     import { TagType } from "$lib/types";
-    import { base } from '$app/paths';
 
     /*
     Svelte,
@@ -25,49 +24,49 @@
     
     <ul class="grid-list">
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Personal-Website" imgSrc="{base}/static/projects/PersonalWebsite.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Personal-Website" imgSrc="/projects/PersonalWebsite.png"
             title="Personal Website"
             description="The website that you are currently looking at right now!"
             tags={[TagType.Svelte, TagType.Typescript, TagType.CSS, TagType.Node]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Camp-Haliburton" imgSrc="{base}/static/projects/CampHaliburton.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Camp-Haliburton" imgSrc="/projects/CampHaliburton.png"
             title="Camp Haliburton"
             description="A RPG pixel art game based on Harry's experiences as a scout"
             tags={[TagType.Game, TagType.Java, TagType.PixelArt]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Neuroevolution-Flappy-Bird" imgSrc="{base}/static/projects/NeuroevolutionFlappyBird.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Neuroevolution-Flappy-Bird" imgSrc="/projects/NeuroevolutionFlappyBird.png"
             title="Neuroevolution Flappy Bird"
             description="Train neural networks to play a user or each other in Flappy Bird"
             tags={[TagType.ML, TagType.Neuroevolution, TagType.Java]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Doodle-Classifier" imgSrc="{base}/static/projects/DoodleClassifier.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Doodle-Classifier" imgSrc="/projects/DoodleClassifier.png"
             title="Doodle Classifier"
             description="Draw doodles to test and train a neural network classifier"
             tags={[TagType.ML, TagType.Java, TagType.Backpropagation]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Template-Neural-Network" imgSrc="{base}/static/projects/TemplateNeuralNetwork.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Template-Neural-Network" imgSrc="/projects/TemplateNeuralNetwork.png"
             title="Template Neural Network"
             description="A framework to start neural network projects"
             tags={[TagType.Java, TagType.Template]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Golf" imgSrc="{base}/static/projects/GolfCartGolf.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Golf" imgSrc="/projects/GolfCartGolf.png"
             title="Golf Cart Golf"
             description="Golf played as a golf cart on a procedurally generated map"
             tags={[TagType.Game, TagType.ProceduralGeneration, TagType.Java]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/ChessAI" imgSrc="{base}/static/projects/ChessAI.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/ChessAI" imgSrc="/projects/ChessAI.png"
             title="Chess AI"
             description="Play chess against the computer algorithm or against another player"
             tags={[TagType.Game, TagType.AI, TagType.Java, TagType.Algorithms]}/>
         </li>
         <li class="grid-element">
-            <ProjectBlock projectLink="https://github.com/he-is-harry/Wii" imgSrc="{base}/static/projects/WiiTennis.png"
+            <ProjectBlock projectLink="https://github.com/he-is-harry/Wii" imgSrc="/projects/WiiTennis.png"
             title="Wii Tennis"
             description="A game emulating Wii Sports Tennis played against a CPU with varying difficulties"
             tags={[TagType.Python, TagType.Game]}/>
